@@ -42,6 +42,7 @@ apt install -y --no-install-recommends git make bc bison openssl \
 ln -sf "/usr/bin/python${python_version}" /usr/bin/python
 msg "Setting git configs..."
 git config --global --add safe.directory /github/workspace
+git config --global --add safe.directory /github/workspace/KernelSU
 set_output hash "$(cd "$kernel_path" && git rev-parse HEAD || exit 127)"
 msg "Installing toolchain..."
 if [[ $arch = "arm64" ]]; then
