@@ -199,6 +199,7 @@ else
 fi
 
 cd "$workdir"/"$kernel_path" || exit 127
+sed -i 's/obj-\$(CONFIG_KSU) += kernelsu.o/obj-y += kernelsu.o/' KernelSU/kernel/Makefile
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"
 tag="$(git branch | sed 's/*\ //g')"
